@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo list</title>
+</head>
+<body>
+    <table>
+        <h3>Количество дел: (<span th:text="${tasksCount}">0</span>)</h3>
+        <tr border = 1>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Dame</th>
+        </tr>
+        <tr th:each="task : ${tasks}">
+            <td th:utext="${task.id}"></td>
+            <td th:utext="${task.name}"></td>
+            <td th:utext="${task.date}"></td>
+        </tr>
+    </table>
+    <p th:text="${someParameter}"></p>
+</body>
+</html>
